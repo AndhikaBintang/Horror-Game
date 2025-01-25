@@ -524,22 +524,6 @@ MonoBehaviour:
   spawnPoint: {fileID: 553348199}
   projectileSpeed: 100
   destroyObjet: 0
---- !u!114 &302794915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 302794896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341db4598d084884481c6b066b17d750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 6099818443823323419, guid: 282188b4d3900454cbfb993ad5d4aca0, type: 3}
-  spawnPoint: {fileID: 553348199}
-  projectileSpeed: 100
-  destroyObjet: 0
 --- !u!1 &328409167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,9 +2515,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1909990356390920737, guid: b93595b2cd0560a41aec84478c8cc83e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 302794914}
-    - targetCorrespondingSourceObject: {fileID: 1909990356390920737, guid: b93595b2cd0560a41aec84478c8cc83e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 302794915}
   m_SourcePrefab: {fileID: 100100000, guid: b93595b2cd0560a41aec84478c8cc83e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
