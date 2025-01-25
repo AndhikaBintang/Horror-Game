@@ -52,13 +52,25 @@ public class attack_state : BaseState
     public void Shoot()
     {
         Transform gunbarrel = enemy.gunBarrel;
-        GameObject bullet = GameObject.Instantiate(Resources.Load("Prefabs/pelor") as GameObject, gunbarrel.position, enemy.transform.rotation);
-        Vector3 shootDirection =(enemy.transform.position - gunbarrel.transform.position).normalized;
+        GameObject bullet = GameObject.Instantiate(Resources.Load("Prefabs/pelor") as GameObject, gunbarrel.position, gunbarrel.rotation);
 
-        bullet.GetComponent<Rigidbody>().velocity = Quaternion.AngleAxis(Random.Range(-3f, 3f), Vector3.up) * shootDirection * 40;
+        // Arah tembakan menuju player
+        Vector3 shootDirection = (enemy.Player.transform.position - gunbarrel.position).normalized;
 
-        Debug.Log("Shoot");
-        shootTimer = 0; 
+        // Variasi kecil pada arah tembakan
+        shootDirection = Quaternion.AngleAxis(Random.Range(-3f, 3f), Vector3.up) * shootDirection;
+
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.velocity = shootDirection * 40f;
+
+        // Atur deteksi tabrakan peluru
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+
+        // Debug untuk memverifikasi arah
+        Debug.DrawRay(gunbarrel.position, shootDirection * 40f, Color.red, 1f);
+
+        // Reset timer untuk tembakan berikutnya
+        shootTimer = 0;
     }
     // Start is called before the first frame update
     void Start()
@@ -72,3 +84,6 @@ public class attack_state : BaseState
         
     }
 }
+
+
+
