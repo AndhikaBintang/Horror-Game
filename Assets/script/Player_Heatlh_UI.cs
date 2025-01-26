@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player_Heatlh_UI : MonoBehaviour
 {
@@ -99,6 +100,24 @@ public class Player_Heatlh_UI : MonoBehaviour
         // Reset the duration timer and set the overlay alpha to fully visible
         durationtimer = 0f; // Reset the duration timer for the fade effect
         overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 1f);
+
+        // Cek apakah health sudah habis
+        if (health <= 0)
+        {
+            health = 0; // Pastikan tidak negatif
+            Die(); // Panggil fungsi untuk kematian karakter
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Karakter mati!");
+
+        // Pindah ke Scene 2 sebelum menghancurkan objek
+        SceneManager.LoadScene(2);
+
+        // Jangan langsung menghancurkan player, biarkan scene pindah dulu
+        Destroy(gameObject, 0.5f); // Opsional: Tambahkan sedikit delay
     }
 
 
