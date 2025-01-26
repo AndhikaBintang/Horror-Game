@@ -3150,6 +3150,7 @@ GameObject:
   - component: {fileID: 1861636877}
   - component: {fileID: 1861636876}
   - component: {fileID: 1861636875}
+  - component: {fileID: 1861636880}
   m_Layer: 6
   m_Name: keypad
   m_TagString: Untagged
@@ -3169,7 +3170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8050544700773498acd88ad276f043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEvents: 0
+  useEvents: 1
   promptMassage: Use Keypad
   door: {fileID: 0}
 --- !u!65 &1861636876
@@ -3258,6 +3259,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1861636880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861636874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f85eb99ef9d0f647b08c99c93a936f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2045127924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6126,7 +6142,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 438283130976329312, guid: b93595b2cd0560a41aec84478c8cc83e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.7
+      value: -9.179
       objectReference: {fileID: 0}
     - target: {fileID: 438283130976329312, guid: b93595b2cd0560a41aec84478c8cc83e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6134,7 +6150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 438283130976329312, guid: b93595b2cd0560a41aec84478c8cc83e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.09
+      value: 1.104
       objectReference: {fileID: 0}
     - target: {fileID: 438283130976329312, guid: b93595b2cd0560a41aec84478c8cc83e, type: 3}
       propertyPath: m_LocalRotation.w
