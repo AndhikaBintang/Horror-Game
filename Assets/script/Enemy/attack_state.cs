@@ -37,13 +37,15 @@ public class attack_state : BaseState
                 enemy.Agent.SetDestination(enemy.transform.position + (Random.insideUnitSphere * 5));
                 moveTimer = 0;
             }
+            enemy.LastKnowPos = enemy.Player.transform.position;
         }
+        
         else
         {
             losePlayerTimer += Time.deltaTime;
-            if(losePlayerTimer > 0)
+            if(losePlayerTimer > 8)
             {
-                StateMachine.ChangeState(new patrol_state());
+                StateMachine.ChangeState(new searchState());
             }
 
         }
