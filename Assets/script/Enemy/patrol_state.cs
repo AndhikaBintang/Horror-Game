@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class patrol_state : BaseState
 {
     public int waypointIndex;
+    public float waitTimer;
     public override void Enter()
     {
         
@@ -26,11 +28,17 @@ public class patrol_state : BaseState
     {
         if (enemy.Agent.remainingDistance <0.2f)
         {
-            if (waypointIndex < enemy.path.waypoints.Count - 1)
+            waitTimer += Time.deltaTime;
+            if(waitTimer > 3)
+            {
+                if (waypointIndex < enemy.path.waypoints.Count - 1)
                 waypointIndex++;
             else
                 waypointIndex = 0;
-            enemy.Agent.SetDestination(enemy.path.waypoints[waypointIndex].position);
+            enemy.Agent.SetDestination(enemy.path.waypoints[waypointIndex].position); 
+                waitTimer = 0;
+            }
+            
         }
     }
 }
